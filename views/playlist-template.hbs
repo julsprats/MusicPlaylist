@@ -1,0 +1,17 @@
+<main>
+    <h1>Welcome to your playlist</h1>
+    <div class="contanier">
+        {{#each playlist}}
+        <div class="song">
+            <img src="{{this.image}}" alt="{{this.title}}">
+            <div class="songinfo">
+                <p class="songtitle">Song Title: {{this.title}}</p>
+                <p class="songartist">Artist: {{this.artist}}</p>
+            </div>
+            <form method="POST" action="/delete-song/{{this.id}}">
+                <button type="submit" class="button">REMOVE</button>
+            </form>
+        </div>
+        {{/each}}
+    </div>
+</main>

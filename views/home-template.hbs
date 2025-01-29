@@ -1,0 +1,17 @@
+<main>
+    <h1>Songs</h1>
+    <div class="container">
+        {{#each songs}}
+        <div class="song">
+            <img src="{{this.image}}" />
+            <div class="songinfo">
+                <p class="songtitle">Song Title: {{this.title}}</p>
+                <p class="songartist">Artist: {{this.artist}}</p>
+            </div>
+            <form method="POST" action="/add-song/{{this.id}}">
+                <button type="submit" class="button">Add to playlist</button>
+            </form>
+        </div>
+        {{/each}}
+    </div>
+</main>
